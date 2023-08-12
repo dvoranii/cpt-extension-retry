@@ -13,12 +13,11 @@ app.get("/api/connect", (req, res) => {
 app.post("/api/connect", async (req, res) => {
   const apiKey = req.body.apiKey;
 
-  // OpenAI endpoint
-  const openAIEndpoint =
-    "https://api.openai.com/v1/engines/davinci/completions";
+  const openAIEndpoint = "https://api.openai.com/v1/engines/curie/completions";
+
   const promptData = {
     prompt:
-      "Compose a short, four-line poem celebrating the grace and beauty of cats.",
+      "Cats with their graceful gait,\nSilent whispers, eyes so sedate,\nEnd the poem with a mention of their purring state.",
     max_tokens: 50,
     temperature: 0.6,
   };
