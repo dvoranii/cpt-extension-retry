@@ -6,9 +6,8 @@ const app = express();
 app.use(json());
 
 app.get("/api/connect", (req, res) => {
-  console.log(req);
-  console.log(res);
   console.log("Welcome!");
+  res.send("Welcome to the API!"); // Sending a response back
 });
 
 app.post("/api/connect", async (req, res) => {
