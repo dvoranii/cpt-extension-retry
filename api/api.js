@@ -1,9 +1,9 @@
-const express = require("express");
-const fetch = require("node-fetch");
+import express, { json } from "express";
+import fetch from "node-fetch";
 
 const app = express();
 
-app.use(express.json());
+app.use(json());
 
 app.post("/api/connect", async (req, res) => {
   const apiKey = req.body.apiKey;
@@ -32,4 +32,4 @@ app.post("/api/connect", async (req, res) => {
   }
 });
 
-module.exports = app;
+export default app;
