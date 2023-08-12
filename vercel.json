@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "openai-extension-api",
+  "builds": [
+    {
+      "src": "/api/api.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/connect",
+      "dest": "/api/api.js"
+    }
+  ]
+}
