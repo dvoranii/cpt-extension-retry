@@ -7,7 +7,7 @@ app.use(json());
 
 app.get("/api/connect", (req, res) => {
   console.log("Welcome!");
-  res.send("Welcome to the API!"); // Sending a response back
+  res.send("Welcome to the API!");
 });
 
 app.post("/api/connect", async (req, res) => {
@@ -17,9 +17,12 @@ app.post("/api/connect", async (req, res) => {
   const openAIEndpoint =
     "https://api.openai.com/v1/engines/davinci/completions";
   const promptData = {
-    prompt: "Write a small poem about cats",
-    max_tokens: 150,
+    prompt:
+      "Compose a short, four-line poem celebrating the grace and beauty of cats.",
+    max_tokens: 50,
+    temperature: 0.6,
   };
+
   try {
     const openAIResponse = await fetch(openAIEndpoint, {
       method: "POST",
@@ -30,7 +33,7 @@ app.post("/api/connect", async (req, res) => {
       body: JSON.stringify(promptData),
     });
     const data = await openAIResponse.json();
-    res.json(data);
+    res.json({ poem: data.choices[0].text.trim() });
   } catch (error) {
     console.error("Error connecting to OpenAI:", error);
     res.status(500).json({ message: "Failed to connect to OpenAI" });
