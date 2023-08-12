@@ -17,7 +17,7 @@ app.post("/api/connect", async (req, res) => {
   const openAIEndpoint =
     "https://api.openai.com/v1/engines/davinci/completions";
   const promptData = {
-    prompt: "Translate the following English text to French: 'Hello World!'",
+    prompt: "Write a small poem about cats",
     max_tokens: 150,
   };
   try {
