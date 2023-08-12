@@ -5,6 +5,12 @@ const app = express();
 
 app.use(json());
 
+app.get("/api/connect", (req, res) => {
+  console.log(req);
+  console.log(res);
+  console.log("Welcome!");
+});
+
 app.post("/api/connect", async (req, res) => {
   const apiKey = req.body.apiKey;
 
