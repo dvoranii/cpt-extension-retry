@@ -9,6 +9,7 @@ app.get("/api/connect", (req, res) => {
   console.log("Welcome!");
   res.send("Welcome to the API!");
 });
+
 app.get("/", (req, res) => {
   console.log("Welcome!");
   res.send("Welcome to Home page");
