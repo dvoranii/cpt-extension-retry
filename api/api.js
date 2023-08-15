@@ -10,19 +10,13 @@ app.get("/api/connect", (req, res) => {
   res.send("Welcome to the API!");
 });
 
-app.get("/", (req, res) => {
-  console.log("Welcome!");
-  res.send("Welcome to Home page");
-});
-
 app.post("/api/connect", async (req, res) => {
   const apiKey = req.body.apiKey;
 
   const openAIEndpoint = "https://api.openai.com/v1/engines/curie/completions";
 
   const promptData = {
-    prompt:
-      "Cats with their graceful gait,\nSilent whispers, eyes so sedate,\nEnd the poem with a mention of their purring state.",
+    prompt: "Write me a list of 10 mammals",
     max_tokens: 50,
     temperature: 0.6,
   };
